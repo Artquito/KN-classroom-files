@@ -1,0 +1,5 @@
+name = "george"
+age = 20
+
+print("Name: " + name + " Age: " + str(age))
+print(f"Name: {name}, Age: {age}")

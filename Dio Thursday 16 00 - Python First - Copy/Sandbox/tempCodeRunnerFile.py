@@ -1,0 +1,1 @@
+2. The username should be all in lowercase.
