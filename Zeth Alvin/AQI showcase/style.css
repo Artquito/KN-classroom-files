@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 10px;
+    background-color: #f0f8ff;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px 20px;
+    font-size: 50px;
+    color: rgb(18, 18, 177);
+}
+    
+.description {
+    text-align: center;
+    margin: 10px 20px;
+    font-size: 20px;
+}
+    
+.input-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; 
+}
+
+#cityInput {
+    width: 400px; 
+    padding: 10px;
+    font-size: 16px;
+}
+
+#checkAqiBtn {
+    padding: 10px;
+    font-size: 16px;
+    margin-left: 10px;
+    background-color: #191ce8;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#checkAirQualityBtn:hover {
+    background-color: #1e21af;
+}
+        
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; 
+}
+
+
+/* Styles for the AQI reference boxes */
+.aqi-reference {
+    display: flex;
+    justify-content: center;
+    margin: 20px 300px 0; /* Top margin of 20px, left/right margins of 10px, and no bottom margin */
+
+
+}
+
+.aqi-box {
+    flex: 1;  /* This allows each box to take up equal space */
+    text-align: center;
+    padding: 7px; /* You can adjust padding here */
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+
+.good { background-color: #13a913; }
+.moderate { background-color: #fafa3c; color: #000; }
+.unhealthy-sensitive { background-color: #f56a1f; }
+.unhealthy { background-color: #e02d2d; }
+.very-unhealthy { background-color: #7e2c86; }
+.hazardous { background-color: #800000
+    ; }
