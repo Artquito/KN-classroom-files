@@ -35,17 +35,35 @@ async function fetchAirQuality(city) {
         const response = await fetch(apiUrl);
 
         // Check if the response is ok
-   
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
+        const data = await response.json();
 
         // Check if data exists for the city
-        
+        if (data.status === 'ok') {
+            const aqi = data.data.aqi;
+            const aqiInfo = getAqiDescription(aqi);
+
+            // Display the air quality data
+            cityNameElement.innerText = city.charAt(0).toUpperCase() + city.slice(1); // Capitalize the first letter
+            airQualityIndexElement.innerText = aqi;
+            airQualityDescriptionElement.innerText = aqiInfo.description;
+        } else {
+            alert("Air quality data not available for this city.");
+        }
 
         
 }
 
 // Adding event listener to the button
 checkAqiBtn.addEventListener('click', () => {
-
+    const city = cityInput.value.trim().toLowerCase(); // Make it lowercase to match API requirements
+    if (city) {
+        fetchAirQuality(city);
+    } else {
+        alert('Please enter a city name.');
+    }
 });
 
